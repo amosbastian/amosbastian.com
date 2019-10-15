@@ -1,7 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { css } from "@emotion/core"
+import { Link } from "gatsby"
 
-const ProjectSection = ({ children, header, slug }) => {
+const Section = ({ children, header, slug }) => {
   return (
     <section
       css={css`
@@ -12,11 +14,15 @@ const ProjectSection = ({ children, header, slug }) => {
         css={css`
           display: flex;
           justify-content: space-between;
-          align-items: flex-end;
+          align-items: baseline;
         `}
       >
         <h2>{header}</h2>
-        <button>View All</button>
+        {slug ? (
+          <Link to={`/${slug}`}>
+            <button onClick={() => {}}>View All</button>
+          </Link>
+        ) : null}
       </div>
       <section
         css={css`
@@ -29,4 +35,10 @@ const ProjectSection = ({ children, header, slug }) => {
   )
 }
 
-export default ProjectSection
+Section.propTypes = {
+  children: PropTypes.node,
+  header: PropTypes.string,
+  slug: PropTypes.string,
+}
+
+export default Section
