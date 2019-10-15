@@ -1,5 +1,4 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import React from "react"
 import { css } from "@emotion/core"
@@ -16,10 +15,24 @@ const NavLink = styled(Link)`
   &.current-page {
     color: #cbd5e0;
   }
+
+  &:last-of-type {
+    margin-right: 0;
+    padding-right: 0;
+  }
 `
 
 const Header = () => (
-  <header>
+  <header
+    css={css`
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 69;
+      background-color: #11141b;
+    `}
+  >
     <div
       css={css`
         max-width: 90vw;

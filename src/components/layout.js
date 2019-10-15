@@ -136,7 +136,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main
         css={css`
-          margin: 2rem auto 4rem;
+          margin: 7rem auto 4rem;
           max-width: 90vw;
           width: 800px;
         `}

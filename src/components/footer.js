@@ -14,7 +14,7 @@ const Footer = () => (
         justify-content: center;
       `}
     >
-      <span>X</span>
+      <span>Footer</span>
     </div>
   </footer>
 )
