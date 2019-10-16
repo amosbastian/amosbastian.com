@@ -18,7 +18,7 @@ const Footer = () => (
       <span>
         <SocialIcon
           style={{ height: 25, width: 25 }}
-          bgColor="#f7fafc"
+          bgColor="#718096"
           url="https://github.com/amosbastian/amosbastian.me"
         ></SocialIcon>
       </span>

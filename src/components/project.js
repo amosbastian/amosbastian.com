@@ -5,8 +5,11 @@ import Image from "./image"
 import GitHubButton from "react-github-btn"
 import mq from "../utilities/emotion"
 import ProjectTag from "./project-tag"
+import { useTheme } from "emotion-theming"
 
 const Project = ({ project }) => {
+  const theme = useTheme()
+
   return (
     <div
       css={css`
@@ -16,18 +19,18 @@ const Project = ({ project }) => {
         transition: 0.3s all;
 
         ${mq("sm")} {
-          background-color: #2d3748;
+          background-color: ${theme.project};
           margin: 0;
           padding: 1rem;
           z-index: 10;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
           & h4 {
-            color: #cbd5e0;
+            color: ${theme.textColour};
           }
         }
         &:hover {
-          background-color: #4a5568;
+          background-color: ${theme.projectHover};
         }
       `}
     >
@@ -81,8 +84,7 @@ const Project = ({ project }) => {
       <div
         css={css`
           display: none;
-          color: #e2e8f0;
-
+          color: ${theme.textColour};
           ${mq("sm")} {
             margin-top: 1rem;
             display: grid;

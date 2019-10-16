@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import ThemedLayout from "../components/themed-layout"
 import SEO from "../components/seo"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
@@ -14,8 +14,8 @@ const TextLink = styled("a")`
 
 const Button = styled("a")`
   color: #5183f5;
+  font-weight: bold;
   border: 2px solid #2161f2;
-  background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -29,7 +29,7 @@ const Button = styled("a")`
 `
 
 const AboutPage = () => (
-  <Layout>
+  <ThemedLayout>
     <SEO title="About" />
     <h1>About</h1>
 
@@ -80,7 +80,7 @@ const AboutPage = () => (
         Click here to see my CV!
       </Button>
     </p>
-  </Layout>
+  </ThemedLayout>
 )
 
 export default AboutPage
