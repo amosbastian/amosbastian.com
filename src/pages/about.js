@@ -76,7 +76,9 @@ const AboutPage = () => (
       add some articles that I want to write, so look forward to that!
       <br></br>
       <br></br>
-      <Button href="/">Click here to see my CV!</Button>
+      <Button href="https://drive.google.com/file/d/1jum-TA-wOOfSc1LvszERw4nVqPnMV35D/view?usp=sharing">
+        Click here to see my CV!
+      </Button>
     </p>
   </Layout>
 )
