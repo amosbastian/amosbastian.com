@@ -14,8 +14,8 @@ const TextLink = styled("a")`
 
 const Button = styled("a")`
   color: #5183f5;
+  font-weight: bold;
   border: 2px solid #2161f2;
-  background: rgba(0, 0, 0, 0.2);
   cursor: pointer;
   padding: 0.5rem 1rem;
   text-decoration: none;

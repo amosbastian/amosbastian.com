@@ -4,6 +4,7 @@ import React from "react"
 import { css } from "@emotion/core"
 import { useThemeProvider } from "../hooks/use-theme"
 import { useTheme } from "emotion-theming"
+import Switch from "react-switch"
 
 const NavLink = styled(Link)`
   color: ${props => props.theme.textColour};
@@ -37,7 +38,7 @@ const Header = () => {
         left: 0;
         right: 0;
         z-index: 69;
-        background-color: ${theme.background};
+        background-color: ${theme.header};
       `}
     >
       <div
@@ -61,7 +62,7 @@ const Header = () => {
           css={css`
             display: flex;
             flex-direction: row;
-            align-items: baseline;
+            align-items: center;
           `}
         >
           <nav>
@@ -73,14 +74,19 @@ const Header = () => {
         </NavLink> */}
           </nav>
 
-          <button
+          <Switch
             css={css`
-              margin-left: 0.5rem;
+              margin-left: 1rem;
             `}
-            onClick={() => themeState.toggle()}
-          >
-            {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          </button>
+            onChange={() => themeState.toggle()}
+            checked={themeState.dark}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            height={25}
+            width={50}
+            offColor="#cbd5e0"
+            onColor={`${theme.project}`}
+          />
         </div>
       </div>
     </header>
