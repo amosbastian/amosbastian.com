@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Section from "../components/section"
-import Project from "../components/project"
+import ProjectList from "../components/project-list"
 
 const projects = [
   {
@@ -12,6 +12,7 @@ const projects = [
     description: "A Python package for the Fantasy Premier League API.",
     image: "fpl.png",
     github: "https://github.com/amosbastian/fpl",
+    tags: ["Python", "aiohttp", "asyncio"],
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const projects = [
     description: "A Python package for the website https://understat.com/",
     image: "understat.png",
     github: "https://github.com/amosbastian/understat",
+    tags: ["Python", "aiohttp", "asyncio"],
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const projects = [
     description: "A web application built for Utopian.io with Flask.",
     image: "utopian_rocks.png",
     github: "https://github.com/amosbastian/utopian.rocks",
+    tags: ["Flask", "JavaScript", "SCSS"],
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const projects = [
     description: "A bot made for the subreddit /r/FantasyPL.",
     image: "reddit_bot.png",
     github: "https://github.com/amosbastian/FPLbot",
+    tags: ["Python", "PRAW", "MongoDB"],
   },
 ]
 
@@ -56,10 +60,8 @@ const IndexPage = () => (
       <span>G</span>
       <span>L</span>
     </div>
-    <Section header="Open Source Projects">
-      {projects.map(project => (
-        <Project key={project.id} project={project}></Project>
-      ))}
+    <Section header="Projects">
+      <ProjectList projects={projects}></ProjectList>
     </Section>
   </Layout>
 )
