@@ -5,6 +5,7 @@ import { css } from "@emotion/core"
 import { useThemeProvider } from "../hooks/use-theme"
 import { useTheme } from "emotion-theming"
 import Switch from "react-switch"
+import Image from "./image"
 
 const NavLink = styled(Link)`
   color: ${props => props.theme.textColour};
@@ -48,15 +49,23 @@ const Header = () => {
           margin: 0 auto;
           padding: 1rem 0;
           display: flex;
-          align-items: baseline;
+          align-items: center;
           justify-content: space-between;
         `}
       >
-        <span>
+        <div
+          css={css`
+            height: 2rem;
+            width: 2rem;
+            & a {
+              display: block;
+            }
+          `}
+        >
           <NavLink activeClassName="current-page" theme={theme} to="/">
-            Amos
+            <Image src="icon.png"></Image>
           </NavLink>
-        </span>
+        </div>
 
         <div
           css={css`
