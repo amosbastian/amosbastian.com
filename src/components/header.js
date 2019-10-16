@@ -45,16 +45,18 @@ const Header = () => (
       `}
     >
       <span>
-        <NavLink to="/">AB</NavLink>
+        <NavLink activeClassName="current-page" to="/">
+          Amos
+        </NavLink>
       </span>
 
       <nav>
         <NavLink activeClassName="current-page" to="/about">
           About
         </NavLink>
-        <NavLink activeClassName="current-page" to="/projects">
+        {/* <NavLink activeClassName="current-page" to="/projects">
           Projects
-        </NavLink>
+        </NavLink> */}
       </nav>
     </div>
   </header>

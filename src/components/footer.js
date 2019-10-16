@@ -1,5 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
+import { SocialIcon } from "react-social-icons"
 
 const Footer = () => (
   <footer>
@@ -14,7 +15,13 @@ const Footer = () => (
         justify-content: center;
       `}
     >
-      <span>Footer</span>
+      <span>
+        <SocialIcon
+          style={{ height: 25, width: 25 }}
+          bgColor="#f7fafc"
+          url="https://github.com/amosbastian/amosbastian.me"
+        ></SocialIcon>
+      </span>
     </div>
   </footer>
 )

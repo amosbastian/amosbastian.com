@@ -4,6 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Section from "../components/section"
 import ProjectList from "../components/project-list"
+import Image from "../components/image"
+import mq from "../utilities/emotion"
+import { SocialIcon } from "react-social-icons"
 
 const projects = [
   {
@@ -17,7 +20,7 @@ const projects = [
   {
     id: 2,
     name: "Understat",
-    description: "A Python package for the website https://understat.com/",
+    description: `A Python package for the website https://understat.com/.`,
     image: "understat.png",
     github: "https://github.com/amosbastian/understat",
     tags: ["Python", "aiohttp", "asyncio"],
@@ -51,15 +54,63 @@ const IndexPage = () => (
     >
       Hi, I&apos;m Amos
     </h1>
-    <p>
-      I am a full stack software engineer currenly living in Lisbon. My
-      favourite technologies that I use daily are Python and React and I love
-      football!
-    </p>
-    <div>
-      <span>G</span>
-      <span>L</span>
+    <div
+      css={css`
+        display: flex;
+        justify-content: space-between;
+      `}
+    >
+      <div>
+        <p
+          css={css`
+            ${mq("sm")} {
+              max-width: 60ch;
+            }
+          `}
+        >
+          I am a full stack software engineer who is currently living in Lisbon.
+          My favourite technologies that I use daily are Python and React. I
+          also love football if you couldn&apos;t tell!
+        </p>
+        <div
+          css={css`
+            display: flex;
+            margin-top: 1rem;
+          `}
+        >
+          <SocialIcon
+            style={{ height: 25, width: 25 }}
+            css={css`
+              margin-right: 0.5rem;
+            `}
+            url="https://github.com/amosbastian"
+          />
+          <SocialIcon
+            style={{ height: 25, width: 25 }}
+            css={css`
+              margin-right: 0.5rem;
+            `}
+            url="https://linkedin.com/in/amosbastian/"
+          />
+          <SocialIcon
+            style={{ height: 25, width: 25 }}
+            url="mailto:amosbastian@gmail.com"
+          />
+        </div>
+      </div>
+      <div
+        css={css`
+          display: none;
+          width: 200px;
+          ${mq("sm")} {
+            display: inline-block;
+          }
+        `}
+      >
+        <Image src="profile_picture.png"></Image>
+      </div>
     </div>
+
     <Section header="Projects">
       <ProjectList projects={projects}></ProjectList>
     </Section>
