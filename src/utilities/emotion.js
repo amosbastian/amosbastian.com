@@ -1,3 +1,29 @@
+const lightBackground = "#edf2f7"
+const lightTextColour = "#2d3748"
+const lightProject = "#fff"
+const lightProjectHover = "#f7fafc"
+
+const themeLight = {
+  background: lightBackground,
+  textColour: lightTextColour,
+  project: lightProject,
+  projectHover: lightProjectHover,
+}
+
+const darkBackground = "#1a202c"
+const darkTextColour = "#cbd5e0"
+const darkProject = "#2d3748"
+const darkProjectHover = "#4a5568"
+
+const themeDark = {
+  background: darkBackground,
+  textColour: darkTextColour,
+  project: darkProject,
+  projectHover: darkProjectHover,
+}
+
+export const theme = mode => (mode === "dark" ? themeDark : themeLight)
+
 const bp = {
   sm: 640,
   md: 768,

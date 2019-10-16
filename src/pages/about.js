@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import ThemedLayout from "../components/themed-layout"
 import SEO from "../components/seo"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
@@ -29,7 +29,7 @@ const Button = styled("a")`
 `
 
 const AboutPage = () => (
-  <Layout>
+  <ThemedLayout>
     <SEO title="About" />
     <h1>About</h1>
 
@@ -80,7 +80,7 @@ const AboutPage = () => (
         Click here to see my CV!
       </Button>
     </p>
-  </Layout>
+  </ThemedLayout>
 )
 
 export default AboutPage
