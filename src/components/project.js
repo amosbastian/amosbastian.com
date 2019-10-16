@@ -16,18 +16,18 @@ const Project = ({ project }) => {
         transition: 0.3s all;
 
         ${mq("sm")} {
-          background-color: #718096;
+          background-color: #2d3748;
           margin: 0;
           padding: 1rem;
           z-index: 10;
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
           & h4 {
-            color: #1a202c;
+            color: #cbd5e0;
           }
         }
         &:hover {
-          background-color: #cbd5e0;
+          background-color: #4a5568;
         }
       `}
     >
@@ -81,7 +81,7 @@ const Project = ({ project }) => {
       <div
         css={css`
           display: none;
-          color: #2d3748;
+          color: #e2e8f0;
 
           ${mq("sm")} {
             margin-top: 1rem;

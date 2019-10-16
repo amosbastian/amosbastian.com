@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
 
           /* Set core body defaults */
           body {
-            min-height: 100vh;
+            min-height: calc(100vh - 7rem);
             scroll-behavior: smooth;
             text-rendering: optimizeSpeed;
             line-height: 1.5;

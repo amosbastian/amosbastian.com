@@ -64,8 +64,9 @@ const IndexPage = () => (
         <p
           css={css`
             ${mq("sm")} {
-              max-width: 60ch;
+              max-width: 65ch;
             }
+            margin-right: 1rem;
           `}
         >
           I am a full stack software engineer who is currently living in Lisbon.
@@ -79,21 +80,16 @@ const IndexPage = () => (
           `}
         >
           <SocialIcon
-            style={{ height: 25, width: 25 }}
-            css={css`
-              margin-right: 0.5rem;
-            `}
+            style={{ height: 25, width: 25, marginRight: 10 }}
+            bgColor="#f7fafc"
             url="https://github.com/amosbastian"
           />
           <SocialIcon
-            style={{ height: 25, width: 25 }}
-            css={css`
-              margin-right: 0.5rem;
-            `}
+            style={{ height: 25, width: 25, marginRight: 10 }}
             url="https://linkedin.com/in/amosbastian/"
           />
           <SocialIcon
-            style={{ height: 25, width: 25 }}
+            style={{ height: 25, width: 25, marginRight: 10 }}
             url="mailto:amosbastian@gmail.com"
           />
         </div>

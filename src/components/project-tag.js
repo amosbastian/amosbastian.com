@@ -14,6 +14,7 @@ const ProjectTag = ({ children }) => {
 
         font-size: 0.8rem;
         font-weight: 600;
+        color: #2c5282;
 
         &:last-of-type {
           margin-right: 0;
