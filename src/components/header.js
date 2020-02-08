@@ -74,15 +74,6 @@ const Header = () => {
             align-items: center;
           `}
         >
-          <nav>
-            <NavLink activeClassName="current-page" theme={theme} to="/about">
-              About
-            </NavLink>
-            {/* <NavLink activeClassName="current-page" to="/projects">
-          Projects
-        </NavLink> */}
-          </nav>
-
           <Switch
             css={css`
               margin-left: 1rem;
