@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@amosbastian.com/markdown": ["libs/markdown/src/index.ts"],
       "@amosbastian.com/site/configuration": ["libs/site/configuration/src/index.ts"],
       "@amosbastian.com/site/theme": ["libs/site/theme/src/index.ts"],
       "@amosbastian.com/site/types": ["libs/site/types/src/index.ts"],
