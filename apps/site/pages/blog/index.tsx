@@ -16,19 +16,17 @@ export const getStaticProps = async () => {
 
 export function Blog({ articles }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
+    <Container py={{ base: 8, md: 16 }}>
       <NextSeo title="Blog" />
-      <Container py={16}>
-        <Heading as="h1" size="2xl" mb={16}>
-          Blog
-        </Heading>
-        <Grid rowGap={{ base: 4, lg: 12 }}>
-          {articles.map((article) => (
-            <ArticleCard key={article.slug} frontMatter={article.frontMatter} slug={article.slug} />
-          ))}
-        </Grid>
-      </Container>
-    </>
+      <Heading as="h1" size="2xl" mb={16}>
+        Blog
+      </Heading>
+      <Grid rowGap={{ base: 4, lg: 12 }}>
+        {articles.map((article) => (
+          <ArticleCard key={article.slug} frontMatter={article.frontMatter} slug={article.slug} />
+        ))}
+      </Grid>
+    </Container>
   );
 }
 
