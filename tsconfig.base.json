@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@amosbastian.com/site/configuration": ["libs/site/configuration/src/index.ts"],
+      "@amosbastian.com/site/theme": ["libs/site/theme/src/index.ts"],
+      "@amosbastian.com/site/types": ["libs/site/types/src/index.ts"],
+      "@amosbastian.com/site/ui": ["libs/site/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

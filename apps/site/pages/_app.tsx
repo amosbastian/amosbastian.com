@@ -1,24 +1,33 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import { theme } from "@amosbastian.com/site/theme";
+import type { Page } from "@amosbastian.com/site/types";
+import { Chakra, Head } from "@amosbastian.com/site/ui";
+import { ChakraProvider } from "@chakra-ui/react";
+import "focus-visible/dist/focus-visible";
+import { AppProps } from "next/app";
+import NextNprogress from "nextjs-progressbar";
 
-function CustomApp({ Component, pageProps }: AppProps) {
+type CustomAppProps = AppProps & {
+  Component: Page<unknown>;
+};
+
+function CustomApp({ Component, pageProps }: CustomAppProps) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
-    <>
-      <Head>
-        <title>Welcome to site!</title>
-      </Head>
-      <div className="app">
-        <header className="flex">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/nx-logo-white.svg" alt="Nx logo" width="75" height="50" />
-          <h1>Welcome to site!</h1>
-        </header>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
-    </>
+    <Chakra cookies={pageProps.cookies}>
+      <ChakraProvider theme={theme} resetCSS>
+        <Head />
+        <NextNprogress
+          color={theme.colors.primary[500]}
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={2}
+          showOnShallow={true}
+          options={{ showSpinner: false }}
+        />
+        {getLayout(<Component {...pageProps} />)}
+      </ChakraProvider>
+    </Chakra>
   );
 }
 
