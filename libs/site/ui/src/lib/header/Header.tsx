@@ -67,16 +67,7 @@ export function Header() {
   const bg = useColorModeValue("white", "gray.900");
 
   return (
-    <Flex
-      as="nav"
-      h={16}
-      zIndex={1}
-      position="sticky"
-      top={0}
-      w="100%"
-      bg={bg}
-      backdropFilter="saturate(180%) blur(20px)"
-    >
+    <Flex as="nav" h={16} zIndex={1} position="sticky" top={0} w="100%" bg={bg}>
       <Container display="flex" justifyContent="space-between" alignItems="center" h={16} w="100%">
         <IconButton
           data-testid="menu-button"
