@@ -1,10 +1,34 @@
-import { Flex, HStack, Icon, IconButton, useColorModeValue, useDisclosure } from "@chakra-ui/react";
+import {
+  Flex,
+  HStack,
+  Icon,
+  IconButton,
+  ListItem,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalOverlay,
+  StackDivider,
+  useColorModeValue,
+  useDisclosure,
+  VStack,
+} from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import * as React from "react";
-import { RiMenuFill } from "react-icons/ri";
+import { RiCloseFill, RiMenuFill } from "react-icons/ri";
 import { ChangeTheme } from "../change-theme/ChangeTheme";
 import { Container } from "../container/Container";
 import { Link } from "../link/Link";
+
+const DESKTOP_NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+];
+
+const MOBILE_NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+];
 
 interface HeaderLinkProps {
   children: React.ReactNode;
@@ -57,18 +81,37 @@ export function Header() {
         <IconButton
           data-testid="menu-button"
           display={{ base: "flex", md: "none" }}
-          aria-label="Open menu"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
           variant="ghost"
           onClick={onOpen}
         >
-          <Icon as={RiMenuFill} />
+          <Icon as={isOpen ? RiCloseFill : RiMenuFill} />
         </IconButton>
         <HStack spacing={8} display={{ base: "none", md: "flex" }} alignItems="baseline">
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
+          {DESKTOP_NAV_LINKS.map(({ href, label }) => (
+            <HeaderLink key={label} href={href}>
+              {label}
+            </HeaderLink>
+          ))}
         </HStack>
         <ChangeTheme />
       </Container>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay background="transparent" />
+        <ModalContent overflow="hidden" boxShadow="none" bg={bg} height="calc(100vh - 64px)" mt={16} mb={0}>
+          <ModalBody px={4} py={6}>
+            <VStack as="ul" spacing={4} divider={<StackDivider />} align="flex-start">
+              {MOBILE_NAV_LINKS.map(({ href, label }) => (
+                <ListItem key={label} listStyleType="none">
+                  <HeaderLink href={href} onClick={onClose}>
+                    {label}
+                  </HeaderLink>
+                </ListItem>
+              ))}
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Flex>
   );
 }

@@ -53,7 +53,7 @@ export function Footer(props: FooterProps) {
     <Box as="footer" backgroundColor={backgroundColor} borderTop="1px solid" borderTopColor={borderColor} {...props}>
       <Grid
         templateColumns={{ base: "1fr", lg: "2fr 1fr" }}
-        px={{ base: 4, lg: 8 }}
+        px={{ base: 6, lg: 8 }}
         py={8}
         maxW="container.md"
         m="0 auto"
