@@ -1,3 +1,4 @@
+export * from "./lib/blog-heading/BlogHeading";
 export * from "./lib/chakra/Chakra";
 export * from "./lib/container/Container";
 export * from "./lib/footer/Footer";

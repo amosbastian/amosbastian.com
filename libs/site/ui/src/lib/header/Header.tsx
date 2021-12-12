@@ -23,11 +23,15 @@ import { Link } from "../link/Link";
 const DESKTOP_NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Projects" },
 ];
 
 const MOBILE_NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Projects" },
 ];
 
 interface HeaderLinkProps {

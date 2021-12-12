@@ -47,7 +47,7 @@ export interface FooterProps {}
 
 export function Footer(props: FooterProps) {
   const backgroundColor = useColorModeValue("white", "gray.900");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
+  const borderColor = useColorModeValue("gray.100", "gray.800");
 
   return (
     <Box as="footer" backgroundColor={backgroundColor} borderTop="1px solid" borderTopColor={borderColor} {...props}>
