@@ -1,5 +1,5 @@
-import * as fs from "fs";
-import * as matter from "gray-matter";
+import fs from "fs";
+import matter from "gray-matter";
 import { join } from "path";
 import readingTime from "reading-time";
 import type { FrontMatter } from "../types";
