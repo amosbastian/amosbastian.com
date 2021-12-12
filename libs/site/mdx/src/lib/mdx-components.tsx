@@ -1,13 +1,22 @@
-import { Link, LinkProps } from "@amosbastian.com/site/ui";
+import { Link } from "@amosbastian.com/site/ui";
 import { Heading, HeadingProps, Text, TextProps, useColorModeValue } from "@chakra-ui/react";
 
-const CustomLink = ({ children, href, ...rest }: LinkProps) => {
+interface CustomLinkProps {
+  children: any;
+  href?: string;
+}
+
+const CustomLink = ({ children, href }: CustomLinkProps) => {
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
   const color = useColorModeValue("primary.500", "primary.200");
   const hoverColor = useColorModeValue("primary.600", "primary.100");
 
+  if (!href) {
+    return children;
+  }
+
   return (
-    <Link color={color} _hover={{ color: hoverColor }} href={href} isExternal={!isInternalLink} {...rest}>
+    <Link color={color} _hover={{ color: hoverColor }} href={href} isExternal={!isInternalLink}>
       {children}
     </Link>
   );
