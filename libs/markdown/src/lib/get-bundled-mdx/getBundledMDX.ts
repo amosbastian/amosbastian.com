@@ -1,7 +1,6 @@
 import { bundleMDX } from "mdx-bundler";
-import { FrontMatter } from "../types";
 
-export const getBundledMDX = async (content: string): Promise<{ frontmatter: FrontMatter; code: string }> => {
+export const getBundledMDX = async (content: string) => {
   const remarkPlugins: any[] = [];
   const rehypePlugins: any[] = [];
 
