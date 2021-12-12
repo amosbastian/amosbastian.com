@@ -13,8 +13,28 @@ const CustomLink = ({ children, href, ...rest }: LinkProps) => {
   );
 };
 
+const CustomP = ({ children, ...rest }: TextProps) => {
+  const colour = useColorModeValue("gray.700", "gray.400");
+
+  return (
+    <Text as="p" color={colour} fontSize="lg" my="2.25em" lineHeight="calc(1em + 0.625rem)" {...rest}>
+      {children}
+    </Text>
+  );
+};
+
+const CustomStrong = ({ children }: TextProps) => {
+  const colour = useColorModeValue("gray.900", "gray.200");
+
+  return (
+    <CustomP as="strong" fontWeight="semibold" color={colour}>
+      {children}
+    </CustomP>
+  );
+};
+
 export const mdxComponents = {
-  // a: CustomLink,
+  a: CustomLink,
   h1: ({ children }: HeadingProps) => (
     <Heading as="h1" size="2xl" mb="1em">
       {children}
@@ -30,9 +50,6 @@ export const mdxComponents = {
       {children}
     </Heading>
   ),
-  p: ({ children }: TextProps) => (
-    <Text as="p" fontSize="md" my="1.25em">
-      {children}
-    </Text>
-  ),
+  p: CustomP,
+  strong: CustomStrong,
 };
