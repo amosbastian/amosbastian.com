@@ -40,7 +40,7 @@ export function BlogHeading({ frontMatter }: BlogHeadingProps) {
         </Text>
       </Flex>
       {frontMatter.dateModified ? (
-        <Badge mt={4}>{`Last updated ${dayjs(frontMatter.datePublished).fromNow()}`}</Badge>
+        <Badge mt={4}>{`Last updated ${dayjs(frontMatter.dateModified).fromNow()}`}</Badge>
       ) : null}
     </Box>
   );
