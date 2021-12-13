@@ -1,4 +1,4 @@
-import { Link } from "@amosbastian.com/site/ui";
+import { Image, Link } from "@amosbastian.com/site/ui";
 import { Heading, HeadingProps, Text, TextProps, useColorModeValue } from "@chakra-ui/react";
 
 interface CustomLinkProps {
@@ -61,4 +61,5 @@ export const mdxComponents = {
   ),
   p: CustomP,
   strong: CustomStrong,
+  Image,
 };
