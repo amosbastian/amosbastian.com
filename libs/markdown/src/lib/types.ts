@@ -7,9 +7,9 @@ export type FrontMatter = {
   };
   category: string;
   datePublished?: string;
-  dateModified: string;
+  dateModified?: string;
   description: string;
   readingTime: IReadTimeResults;
-  seoTitle: string;
+  seoTitle?: string;
   title: string;
 };
