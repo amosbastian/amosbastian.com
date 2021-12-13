@@ -1,6 +1,13 @@
 {
   "version": 2,
   "projects": {
+    "articles": {
+      "root": "articles",
+      "sourceRoot": "articles",
+      "projectType": "application",
+      "targets": {},
+      "tags": []
+    },
     "markdown": {
       "root": "libs/markdown",
       "sourceRoot": "libs/markdown/src",
@@ -28,6 +35,7 @@
       "root": "apps/site",
       "sourceRoot": "apps/site",
       "projectType": "application",
+      "implicitDependencies": ["articles"],
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
