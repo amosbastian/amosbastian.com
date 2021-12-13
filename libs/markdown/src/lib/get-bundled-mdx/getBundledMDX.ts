@@ -1,4 +1,5 @@
 import { bundleMDX } from "mdx-bundler";
+import { join } from "path";
 
 export const getBundledMDX = async (content: string) => {
   const remarkPlugins: any[] = [];
@@ -12,5 +13,6 @@ export const getBundledMDX = async (content: string) => {
 
       return options;
     },
+    cwd: join(process.cwd(), "libs/site/mdx/src/lib"),
   });
 };
