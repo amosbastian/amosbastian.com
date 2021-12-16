@@ -20,6 +20,7 @@
     "core-js": "^3.19.3",
     "dayjs": "^1.10.7",
     "esbuild": "^0.14.2",
+    "feed": "^4.2.2",
     "focus-visible": "^5.2.0",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",

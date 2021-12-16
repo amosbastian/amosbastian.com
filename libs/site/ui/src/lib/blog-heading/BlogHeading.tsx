@@ -16,8 +16,6 @@ export function BlogHeading({ frontMatter }: BlogHeadingProps) {
   const colour = useColorModeValue("gray.600", "whiteAlpha.700");
   const hoverColour = useColorModeValue("primary.600", "primary.200");
 
-  console.log(frontMatter.author);
-
   return (
     <Box mb={8}>
       <Link href="/blog" display="flex" alignItems="center" mb={4} color={colour} _hover={{ color: hoverColour }}>
@@ -39,7 +37,7 @@ export function BlogHeading({ frontMatter }: BlogHeadingProps) {
           {frontMatter.readingTime.text}
         </Text>
       </Flex>
-      {frontMatter.dateModified ? (
+      {frontMatter.dateModified && frontMatter.dateModified !== frontMatter.datePublished ? (
         <Badge mt={4}>{`Last updated ${dayjs(frontMatter.dateModified).fromNow()}`}</Badge>
       ) : null}
     </Box>

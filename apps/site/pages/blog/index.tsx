@@ -1,11 +1,13 @@
-import { getPublishedArticles } from "@amosbastian.com/markdown";
+import { generateRSSFeed, getSortedArticles } from "@amosbastian.com/markdown";
 import { ArticleCard, Container, getLayout } from "@amosbastian.com/site/ui";
 import { Grid, Heading } from "@chakra-ui/react";
 import { InferGetStaticPropsType } from "next";
 import { NextSeo } from "next-seo";
 
 export const getStaticProps = async () => {
-  const publishedArticles = getPublishedArticles();
+  const publishedArticles = getSortedArticles();
+
+  generateRSSFeed(publishedArticles);
 
   return {
     props: {
