@@ -53,5 +53,5 @@ export const generateRSSFeed = (
 
   // Write the RSS output to a public file, making it
   // accessible at ashleemboyer.com/rss.xml
-  fs.writeFileSync("public/rss.xml", feed.rss2());
+  fs.writeFileSync("apps/site/public/rss.xml", feed.rss2());
 };
